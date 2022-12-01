@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit person</title>
+</head>
+<body>
+  <form th:action="@{/people/{id}(id = *{id})}" th:object="${person}" th:method="put">
+    <label for="fullName">Введите ФИО</label>
+    <input th:type="text" th:field="*{fullName}" id="fullName"/>
+    <br />
+    <label for="yearOfBirth">Введите год рождения</label>
+    <input th:type="number" th:field="*{yearOfBirth}" id="yearOfBirth"/>
+    <br />
+    <input th:type="submit" value="Изменить" />
+  </form>
+</body>
+</html>
